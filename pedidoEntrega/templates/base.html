@@ -21,24 +21,30 @@
                     {% if 'username' in session %}
                         {% if session['role'] == 'admin' %}
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Gestión de Usuarios</a>
+                                <a class="nav-link" href="#">Gestión de Pedidos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Configuración del Sistema</a>
-                            </li>
-                        {% elif session['role'] == 'editor' %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Crear Contenido</a>
+                                <a class="nav-link" href="#">Gestión de Clientes</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Editar Contenido</a>
+                                <a class="nav-link" href="#">Gestión de Vendedores</a>
                             </li>
-                        {% elif session['role'] == 'user' %}
+                           <li class="nav-item">
+                                <a class="nav-link" href="#">Reportes</a>
+                            </li>
+                        {% elif session['role'] == 'seller' %}
                             <li class="nav-item">
-                                <a class="nav-link" href="#">alguna tarea 1</a>
+                                <a class="nav-link" href="/ver_mapa">Recorrido</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">alguna tarea 2</a>
+                                <a class="nav-link" href="#">Pre venta</a>
+                            </li>
+                        {% elif session['role'] == 'driver' %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/ver_mapa">Recorrido</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pedido">Entrega pedidos</a>
                             </li>
 
                         {% endif %}
